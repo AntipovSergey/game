@@ -1,20 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { NavLink } from 'react-router-dom';
 
-export default function CategoryCard() {
+export default function CategoryCard({ category }) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-  )
+    <NavLink to={`/quiz/${category.id}`}>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={category.img} />
+        <Card.Body>
+          <Card.Title>{category.name}</Card.Title>
+        </Card.Body>
+      </Card>
+    </NavLink>
+  );
 }
-
-
-'/api/categories'
